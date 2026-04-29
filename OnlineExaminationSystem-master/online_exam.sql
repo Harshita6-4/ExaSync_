@@ -1,31 +1,9 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Apr 20, 2026 at 07:23 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `online_exam`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `adminlog`
---
 
 CREATE TABLE `adminlog` (
   `id` int(3) NOT NULL,
@@ -33,43 +11,6 @@ CREATE TABLE `adminlog` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `adminlog`
---
-
-INSERT INTO `adminlog` (`id`, `email`, `password`) VALUES
-(1, 'wilsonrao@gmail.com', '1234');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `django`
---
-
-CREATE TABLE `django` (
-  `id` int(3) UNSIGNED ZEROFILL NOT NULL,
-  `qno` varchar(255) NOT NULL,
-  `question` varchar(255) NOT NULL,
-  `a1` varchar(255) NOT NULL,
-  `a2` varchar(255) NOT NULL,
-  `a3` varchar(255) NOT NULL,
-  `a4` varchar(255) NOT NULL,
-  `ans` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `django`
---
-
-INSERT INTO `django` (`id`, `qno`, `question`, `a1`, `a2`, `a3`, `a4`, `ans`) VALUES
-(001, '1', 'What is Django?', 'Movie', 'Song', 'Python Framework', 'Programming Language', 'Python Framework'),
-(002, '2', 'What is MVT?', 'Model View Template', 'Sport', 'Car Brand', 'TV Show', 'Model View Template');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `java`
---
 
 CREATE TABLE `java` (
   `id` int(3) UNSIGNED ZEROFILL NOT NULL,
@@ -82,9 +23,6 @@ CREATE TABLE `java` (
   `ans` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `java`
---
 
 INSERT INTO `java` (`id`, `qno`, `question`, `a1`, `a2`, `a3`, `a4`, `ans`) VALUES
 (001, '1', 'Which company originally developed Java?', 'Microsoft', 'Sun Microsystems', 'Apple', 'IBM', 'Sun Microsystems'),
@@ -138,11 +76,6 @@ INSERT INTO `java` (`id`, `qno`, `question`, `a1`, `a2`, `a3`, `a4`, `ans`) VALU
 (049, '49', 'What does the instanceof operator do?', 'Creates an instance', 'Checks if object is instance of a class', 'Destroys an instance', 'Counts instances', 'Checks if object is instance of a class'),
 (050, '50', 'Which sorting algorithm is used by Arrays.sort() in Java?', 'Bubble Sort', 'Quick Sort', 'Dual Pivot Quick Sort', 'Merge Sort', 'Dual Pivot Quick Sort');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
 
 CREATE TABLE `login` (
   `id` int(3) UNSIGNED ZEROFILL NOT NULL,
@@ -151,10 +84,6 @@ CREATE TABLE `login` (
   `password` varchar(255) NOT NULL,
   `marks` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `login`
---
 
 INSERT INTO `login` (`id`, `username`, `email`, `password`, `marks`) VALUES
 (001, 'abhayshah', 'abhay@gmail.com', '1234', 3),
@@ -166,93 +95,14 @@ INSERT INTO `login` (`id`, `username`, `email`, `password`, `marks`) VALUES
 (007, 'rahul', 'rahul@gmail.com', 'password1234', NULL),
 (008, 'ANANY', 'annay@gmail.com', 'Admin@123', NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `python`
---
-
-CREATE TABLE `python` (
-  `id` int(3) UNSIGNED ZEROFILL NOT NULL,
-  `qno` varchar(255) DEFAULT NULL,
-  `question` varchar(255) DEFAULT NULL,
-  `a1` varchar(255) DEFAULT NULL,
-  `a2` varchar(255) DEFAULT NULL,
-  `a3` varchar(255) DEFAULT NULL,
-  `a4` varchar(255) DEFAULT NULL,
-  `ans` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `python`
---
-
-INSERT INTO `python` (`id`, `qno`, `question`, `a1`, `a2`, `a3`, `a4`, `ans`) VALUES
-(001, '1', 'What is Python?', 'Programming Language', 'Snake', 'TV Show', 'Compiled Language', 'Programming Language'),
-(002, '2', 'Python is the most popular for?', 'AI', 'Game Development', 'App Development', 'Desktop App Development', 'AI'),
-(003, '3', 'Variables in Python?', '_var', '3myname', '2var', 'name', 'name'),
-(004, '4', 'Which option is not a Python Web Framework?', 'Django', 'Flask', 'Pyramid', 'Laravel', 'Laravel'),
-(005, '5', 'Which python library provides the user with dataframes?', 'Pandas', 'Numpy', 'Matplotlib', 'Seaborn', 'Pandas'),
-(006, '6', 'Which option is a python framework for creating mobile applications?', 'Kivy', 'Laravel', 'ReactJS', 'VueJS', 'Kivy'),
-(007, '7', 'Python is ......?', 'Programming Language', 'Framework', 'Protocol', 'Hardware Componetn', 'Programming Language');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `django`
---
-ALTER TABLE `django`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `java`
---
 ALTER TABLE `java`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `login`
---
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `python`
---
-ALTER TABLE `python`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `django`
---
-ALTER TABLE `django`
-  MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `java`
---
 ALTER TABLE `java`
   MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
---
--- AUTO_INCREMENT for table `login`
---
 ALTER TABLE `login`
   MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `python`
---
-ALTER TABLE `python`
-  MODIFY `id` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
