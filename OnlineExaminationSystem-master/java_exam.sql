@@ -1,6 +1,4 @@
--- Remove old tables
-DROP TABLE IF EXISTS `python`;
-DROP TABLE IF EXISTS `django`;
+
 
 -- Create Java table
 CREATE TABLE IF NOT EXISTS `java` (
